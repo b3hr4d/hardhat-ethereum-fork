@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"target": "ES6",
+		"outDir": "Nodes/dist",
+		"module": "commonjs",
+		"allowJs": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	},
+	"include": ["src", "Nodes/migrates", "Nodes/events"],
+	"files": ["./hardhat.config.ts"]
+}
