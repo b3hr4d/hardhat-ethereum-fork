@@ -6,7 +6,7 @@ import "@nomiclabs/hardhat-ethers";
 import "hardhat-ethernal";
 
 const MORALIS_API_KEY = process.env.MORALIS_API_KEY;
-const INFURA_KOVAN = process.env.INFURA_KOVAN;
+const INFURA_API_KEY = process.env.INFURA_API_KEY;
 const QUICK_NODE_API_KEY = process.env.QUICK_NODE_API_KEY;
 const QUICK_NODE_TESTNET_API_KEY = process.env.QUICK_NODE_TESTNET_API_KEY;
 
@@ -26,7 +26,9 @@ const config: HardhatUserConfig = {
 			// },
 			forking: {
 				// mainnet
-				url: `https://wider-intensive-tree.bsc.discover.quiknode.pro/${QUICK_NODE_API_KEY}`,
+				// url: `https://mainnet.infura.io/v3/${INFURA_API_KEY}`,
+				// bsc mainnet
+				url: `https://practical-methodical-snow.bsc.discover.quiknode.pro/${QUICK_NODE_API_KEY}`,
 			},
 		},
 		moralis: {
@@ -39,16 +41,20 @@ const config: HardhatUserConfig = {
 			chainId: 97,
 			gasPrice: 10000000000,
 		},
-		mainnet: {
+		bscMainnet: {
 			url: "https://bsc-dataseed1.binance.org/",
 			chainId: 56,
 			gasPrice: 5000000000,
 		},
+		mainnet: {
+			url: `https://mainnet.infura.io/v3/${INFURA_API_KEY}`,
+			chainId: 1,
+		},
 		rinkeby: {
-			url: `https://rinkeby.infura.io/v3/${INFURA_KOVAN}`,
+			url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,
 		},
 		kovan: {
-			url: `https://kovan.infura.io/v3/${INFURA_KOVAN}`,
+			url: `https://kovan.infura.io/v3/${INFURA_API_KEY}`,
 		},
 	},
 	ethernal: {
